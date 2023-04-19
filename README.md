@@ -7,3 +7,4 @@
 * Sentence Splitter
 * Data Cleaning
 * Regular Expression
+* Txt Merge
