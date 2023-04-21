@@ -11,4 +11,4 @@
 <br/><br/>
 
 ## Expriement
-AIHUB Preprocessing Interim Findings
+AIHub Preprocessing Interim Findings
