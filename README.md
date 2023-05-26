@@ -8,6 +8,7 @@
 * Data Cleaning
 * Regular Expression
 * Txt Merge
+* Multiprocessing
 <br/><br/>
 
 ## Expriement
