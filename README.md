@@ -11,7 +11,9 @@
 * Multiprocessing
 * Future Work
 <br>1) Dataframe(Pandas), Dictionary Optimization
-<br>2) Remove Warning kss 3.7.3 Message: "[Korean Sentence Splitter]: Too long text! turn off quotes calibration!"
+<br>2) The Searcher of Source JSON
+<br>To compare JSON and TXT extracted from JSON
+<br>3) Remove Warning kss 3.7.3 Message: "[Korean Sentence Splitter]: Too long text! turn off quotes calibration!"
 <br/><br/>
 
 
