@@ -9,6 +9,9 @@
 * Regular Expression
 * TXT Merge
 * Multiprocessing
+* Future Work
+<br>1) Dataframe(Pandas), Dictionary Optimization
+<br>3) Remove Warning kss 3.7.3 Message: "[Korean Sentence Splitter]: Too long text! turn off quotes calibration!"
 <br/><br/>
 
 
