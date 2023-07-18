@@ -10,7 +10,7 @@
 * TXT Merge
 * Multiprocessing
 * Future Work
-<br>1) Dataframe(Pandas or Polas), Dictionary Optimization
+<br>1) Dataframe(Pandas or Polars), Dictionary Optimization
 <br>2) The Searcher of Source JSON
 <br>To compare JSON and TXT extracted from JSON
 <br>File Naming & Storage System (Before & After File Name Match in Excel)
