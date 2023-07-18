@@ -18,4 +18,6 @@
 <br>3) Remove Warning kss 3.7.3 Message: "[Korean Sentence Splitter]: Too long text! turn off quotes calibration!"
 <br/><br/>
 
-
+## Library
+`kss` `regex` `glob` `pandas`
+<br/><br/><br/><br/><br/>
