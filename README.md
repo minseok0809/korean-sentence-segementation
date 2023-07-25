@@ -9,6 +9,7 @@
 * Regular Expression
 * TXT Merge
 * Multiprocessing
+* Preprocessing Runtime Calculator
 * Future Work
 <br>1) Dataframe(Pandas or Polars), Dictionary Optimization
 <br>2) The Searcher of Source JSON
