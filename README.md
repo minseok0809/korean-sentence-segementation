@@ -1,4 +1,4 @@
-# Text Preprocessing
+# Korean Text Preprocessing
 <br/><br/>
 
 ## Sentence Segmentation
