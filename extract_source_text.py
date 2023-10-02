@@ -1,22 +1,18 @@
 import pandas as pd
 
-
-
-
 def make_sources(json_sample, source_file):
-
             
-    corpus_type1 = ['machine_reading_data_for_administrative_documents', 'machine_reading_pro']
+    corpus_type1 = ['행정 문서 대상 기계독해 데이터', '기계독해']
 
-    if 'automatic_patent_classification' in source_file:
+    if '특허 분야 자동분류 데이터' in source_file:
         sources = list(pd.DataFrame(json_sample['dataset'])['abstract'].dropna())
 
 
-    elif 'british_korean_data_on_patents_in_major_countries_linked_to_industrial_information' in source_file:
+    elif '산업정보 연계 주요국 특허 영-한 데이터' in source_file:
         sources = list(pd.DataFrame(json_sample['labeled_data'])['astrt_cont_kor'])
 
 
-    elif 'document_summary_text' in source_file:
+    elif '문서요약 텍스트' in source_file:
         source_df = pd.DataFrame(json_sample['documents'])
         source_dict = dict(source_df['text'].explode())
         source_json = pd.json_normalize(source_dict)  
@@ -34,7 +30,8 @@ def make_sources(json_sample, source_file):
                     if len(source_sentence) > 0:
                         sources.append(source_sentence)
 
-    elif 'general_common_sense' in source_file: 
+
+    elif '일반상식' in source_file: 
         if 'ko_wiki_v1_squad' in source_file:
             source_df = pd.DataFrame(json_sample['data'])
             source_dict = dict(source_df['paragraphs'].explode())
@@ -44,7 +41,8 @@ def make_sources(json_sample, source_file):
         else:
             sources = (pd.DataFrame(json_sample['sentence'])['text'])
 
-    elif 'korean_corpus_data_based_on_large_scale_purchase_books' in source_file:        
+
+    elif '대규모 구매도서 기반 한국어 말뭉치 데이터' in source_file:        
         source_df = pd.DataFrame(json_sample['paragraphs'])
         source_dict = dict(source_df['sentences'].explode())
         source_json = pd.json_normalize(source_dict)  
@@ -64,7 +62,8 @@ def make_sources(json_sample, source_file):
                 except:
                     pass 
 
-    elif 'legal_regulations_(such_as_terms_and_conditions_of_judgment)_text_analysis_data' in source_file:   
+
+    elif '법률 규정 (판결서 약관 등) 텍스트 분석 데이터' in source_file:   
         if '판결문' in source_file:
             source_df = pd.DataFrame(json_sample)
             sources = source_df.loc['disposalcontent']['disposal'] + \
@@ -92,7 +91,8 @@ def make_sources(json_sample, source_file):
         source_json = pd.json_normalize(source_dict)
         sources = list(source_json.filter(regex='context').values[0])
 
-    elif 'professional_corpus' in source_file: 
+
+    elif '전문분야 말뭉치' in source_file: 
        
         if '논문_' in source_file:
             sources = list(pd.DataFrame(json_sample['data'])['text'])
@@ -113,7 +113,8 @@ def make_sources(json_sample, source_file):
             source_json = pd.json_normalize(source_dict)
             sources = list(source_json.filter(regex='text').values[0])
 
-    elif 'reading_books_by_machine' in source_file: 
+
+    elif '도서자료 기계독해' in source_file: 
 
         source_df = pd.DataFrame(json_sample['data'])
         source_dict = dict(source_df['paragraphs'].explode())
@@ -130,17 +131,18 @@ def make_sources(json_sample, source_file):
                 except:
                     pass
 
-    elif 'summary_and_report_generation_data' in source_file: 
+
+    elif '요약문 및 레포트 생성 데이터' in source_file: 
         sources = json_sample['Meta(Refine)']['passage']
 
 
-    elif 'summary_of_book_materials' in source_file: 
+    elif '도서자료 요약' in source_file: 
         passage = json_sample["passage"]  
         summary = json_sample["summary"]
         sources = [passage, summary]
 
 
-    elif 'summary_of_thesis_materials' in source_file: 
+    elif '논문자료 요약' in source_file: 
 
         source_df = pd.DataFrame(json_sample['data'])
 
@@ -167,7 +169,9 @@ def make_sources(json_sample, source_file):
             summary_section_source_json = pd.json_normalize(summary_section_source_dict)
             sources = list(summary_section_source_json.filter(regex='orginal_text').values[0])
 
-    elif 'web_data_based_korean_corpus_data' in source_file:
+
+    elif '웹데이터 기반 한국어 말뭉치 데이터' in source_file:
         sources = list(pd.DataFrame(json_sample['SJML']['text'])['content'])
+
 
     return sources
